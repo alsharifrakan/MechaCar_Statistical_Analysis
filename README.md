@@ -28,7 +28,9 @@ This new assignment consists of three technical analysis deliverables and a prop
 				
 
 **Statistical Summary:** 
-![d1](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/linear_regression_d1.png)
+![](images/challenge1_summary.png)
+
+
 
 From the above output we can see that:
 
