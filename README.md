@@ -61,66 +61,45 @@ Lot 1 and Lot 2 with variances of 0.98 and 7.47 respectively are  within the 100
 ## t-Tests on Suspension Coils
 
 
-![](images/t_test.png
+![](images/t_test.png)
+
+
+the mean of the sample is 1498.78 and a p-Value of 0.06 which is greater than the  significance level of 0.05, there is NOT enough evidence to support rejecting the null hypothesis.
+ 
+ 
+![](images/t-test123.png)
 
 
 
-![](images/t_test123.png)
 
+Lot 1  actually has a mean of 1500. With a p-Value of 1,  we certainly cannot reject  the NULL hypothesis .in Lot 2 it has a mean of 1500.02 and a p-Value of 0.61;we cannot reject the NULL hypothesis.On the Other hand, Lot 3 has a mean of 1496.14 and a p-Value is 0.04 which is lower than the common significance level of 0.05.which tells us to reject the NULL Hypothesis.
 
+in Lot 3 cycle, the process should be examined further and coils should be inspected.
 
-We can clearly see that  the mean of the sample is 1498.78 and a p-Value of 0.06 which is higher than the common significance level of 0.05, there is **NOT enough evidence to support rejecting the null hypothesis**.  That is to say, the mean of all three of these manufacturing lots is statistically similar to the presumed population mean of 1500. 
-
-**Next looking at each individual lots:**
-
-1. Lot 1 sample actually has the **true sample mean of 1500**, again as we saw in the summary statistics above. With a **p-Value of 1**, clearly we cannot reject (i.e. accept) the null hypothesis that there is no statistical difference between the observed sample mean and the presumed population mean (1500).
-2. Lot 2 has essentially the same outcome with a **sample mean of 1500.02**, a **p-Value of 0.61**; the null hypothesis cannot be rejected, and the sample mean and the population mean of 1500 are statistically similar.
-3. However, Lot 3, not surprisingly is a different scenario. Here **the sample mean is 1496.14** and the **p-Value is 0.04**, which is lower than the common significance level of 0.05.  All indicating to **reject the null hypothesis** that this sample mean and the presumed population mean are not statistically different.
-
- ![d3](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/t_test_lot.png)
-
-How does this information help?  Clearly, something went awry in Lot 3's production cycle. The process needs to be checked for system fails and the suspension coils from this lot need to be inspected to remove those not meeting quality criteria.
 
 # Deliverable 4:  
 ## Study Design: MechaCar vs Competition
-### Deliverable Requirements:
 
-Using your knowledge of R, design a statistical study to compare performance of the MechaCar vehicles against performance of vehicles from other manufacturers.
+### **Setting Hypothesis**
+ **Null Hypothesis** : prototype is priced correctly
+ **Alternative Hypothesis** : prototype is NOT priced correctly 
 
-The statistical study design has the following:
-- A metric to be tested is mentioned
-- A null hypothesis or an alternative hypothesis is described
-- A statistical test is described to test the hypothesis
+### **What metric or metrics are you going to test?**
 
-
-This study would involve collecting data on MechaCar and its comparable models across several different manufacturers over the last 3 years.
-
-* What are the competitions' comparable models, 
-* Which cars will MechaCar be competing with head-to-head? which cars will be included in the study?
-* Which factors will look at the study to determine the relevant to selling price?
- 
-
-#### Metrics
-Collecting data for comparable models across all major manufacturers for past 3 years for the following metrics:
-
-*  Safety Feature Rating: **Independent Variable**
-*  Current Price (Selling): **Dependent Variable**
-*  Drive Package : **Independent Variable**
-*  Engine (Electric, Hybrid, Gasoline / Conventional): **Independent Variable**
-*  Resale Value: **Independent Variable**
-*  Average Annual Cost of ownership (Maintenance): **Independent Variable**
-*  MPG (Gasoline Efficiency): **Independent Variable**
+Safety Feature Rating
+Current Price (Selling)
+Resale Value: Independent Variable
+Engine : Independent Variable
+MPG 
 
 
-#### Hypothesis: Null and Alternative
-After determining which factors are key for the MechaCar's genre:
+### **statistical test to be used to test hypothesis**
 
- * Null Hypothesis (Ho): MechaCar is priced correctly based on its performance of key factors for its genre.
- * Alternative Hypothesis (Ha): MechaCar is NOT priced correctly based on performance of key factors for its genre.
- 
-#### Statistical Tests
-A **multiple linear regression** would be used to determine the factors that have the highest correlation/predictability with the list selling price (dependent variable); which combination has the greatest impact on price (it may be all of them!)
+the t-test to compare our dataset with the competitors and a multiple linear regression.
+
+### **Data for statistical testing to be used**
+competitors models from different manufaturers over the last few years and how do they compare with Mechacar.
 
 
 
-##### MechaCar Analysis - AutosRUs Completed by Emmanuel Martinez
+
