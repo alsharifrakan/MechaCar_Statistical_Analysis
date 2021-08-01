@@ -27,102 +27,49 @@ This new assignment consists of three technical analysis deliverables and a prop
 ### mpg =  (6.267)**vehicle_length** + (0.0012)**vehicle_weight** + (0.0688)**spoiler_angle** + (3.546)**ground_clearance** + (-3.411)**AWD** + (-104.0)
 				
 
-**Statistical Summary:** 
-![](images/challenge1_summary.png)
+![](images/challege1_summary.png)
 
 
+**Summary:** 
 
-From the above output we can see that:
+we notice that The p-Value is much smaller than the assumed significance level of 0.05.this means we have enough evidence to reject the null Hypothesis and that the slope is not zero. In additon , we can notice tht Vehicle length and and ground clearance have an impact on MPG. Furthermore, we have an r-squared value of 0.7149,  meaning that around 71% of all mpg predictions will be determined by this model.
 
-1. The **vehicle length**, and **vehicle ground clearance** are statistically likely to provide non-random amounts of variance to the model. That is to say, the vehicle length and vehicle ground clearance have a significant impact on miles per gallon on the MechaCar prototype. Conversely,
-the **vehicle weight**, **spoiler angle**, and **All Wheel Drive** (AWD) have p-Values that indicate a random amount of variance with the dataset.  
-
-2. The p-Value for this model, ```p-Value: 5.35e-11```, is much smaller than the assumed significance level of 0.05%. This indicates there is sufficient evidence to **reject our null hypothesis**, which further indcates that the slope of this linear model is **not zero**.
-
-
-3.  This linear model has an r-squared value of 0.7149, which means that approximately 71% of all mpg predictions will be determined by this model. Relatively speaking, his multiple regression model **does predict mpg of MechaCar prototypes effectively**. 
-
-If we remove the less impactful independent variables (vehicle weight, spoiler angle, and All Wheel Drive), the predictability does decrease, but not drastically: the r-squared value falls from 0.7149 to 0.674. 
-
-![d1](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/new_linear_regression_d1.png)
 
 
 # Deliverable 2:  
 ## Summary Statistics on Suspension Coils
-### Deliverable Requirements:
+ 
+ 
+![](images/total_summary2.png)
 
-The MechaCar Suspension_Coil.csv dataset contains the results from multiple production lots. In this dataset, the weight capacities of multiple suspension coils were tested to determine if the manufacturing process is consistent across production lots. Using your knowledge of R, you’ll create a summary statistics table to show:
 
-- The suspension coil’s PSI continuous variable across all manufacturing lots
-- The following PSI metrics for each lot: mean, median, variance, and standard deviation.
 
-#### Technical Analysis
-1. Download the `Suspension_Coil.csv` file, and place it in the active directory for your R session.
-2. In your `MechaCarChallenge.RScript`, import and read in the `Suspension_Coil.csv` file as a table.
-3. Write an RScript that creates a `total_summary` dataframe using the `summarize()` function to get the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+![](images/lot_summary2.png)
 
-Your `total_summary` dataframe should look like this:
 
-![d1](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/data-15-total-summary-data-mean-median-variance-sd.png)
 
-4. Write an RScript that creates a `lot_summary` dataframe using the `group_by()` and the `summarize()` functions to group each manufacturing lot by the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
-Your lot_summary dataframe should look like this:
+![](images/Rplotchallenge2.png)
 
-![d1](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/data-15-manufacturing-lot.png)
 
-5. Save your `MechaCarChallenge.RScript` file to your GitHub repository.
 
-> To Deliver. 
 
-You will earn a perfect score for Deliverable 2 by completing all requirements below:
+its cleat that the variance of the coils is 62.29 PSI, which is well within the 100 PSI variance requirement.  
 
-- The Suspension_Coil.csv file is imported and read into a dataframe
-- An RScript is written to create a total summary dataframe that has the mean, median, variance, and standard deviation of the PSI for all manufacturing lots
-- An RScript is written to create a lot summary dataframe that has the mean, median, variance, and standard deviation for each manufacturing lot
-- There is a summary that addresses the design specification requirement for all the manufacturing lots and each lot individually
-
-The Suspension Coil dataset provided for the MechaCar contains the results of testing the weight capacities of multiple suspension coils from multiple production lots to determine consistency. 
-
-First looking at all manufacturing lots:
-
-![d2](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/total_lot_summary.png)
-
-Diving a little deeper into each of the 3 lots:
-
-![d2](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/manufactoring_lot_summary.png)
-
-With the understanding that the design specifications for the MechaCar suspension coils mandate that <mark style="background-color: Yellow">**the variance of the suspension coils cannot exceed 100 pounds per square inch (PSI)**</mark> . 
-
-Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
-
-When looking at the entire population of the production lot, the variance of the coils is 62.29 PSI, which is well within the 100 PSI variance requirement.  
-
-Similarly, but significantly more consistent, Lot 1 and Lot 2 are well within the 100 PSI variance requirement; with variances of 0.98 and 7.47 respectively.  However, it is Lot 3 that is showing much larger variance in performance and consistency, with a variance of 170.29.  It is Lot 3 that is disproportionately causing the variance at the full lot level.  
-
-This very simple boxplot illustrates the differences between the lots:
-
-![d2](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/boxplot2.png)
+Lot 1 and Lot 2 with variances of 0.98 and 7.47 respectively are  within the 100 PSI variance requirement;However, it is Lot 3,with a variance of 170.29, has a higher variance 
 
 # Deliverable 3:  
 ## t-Tests on Suspension Coils
-### Deliverable Requirements:
 
-Using your knowledge of R, perform t-tests to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.
 
-#### Technical Analysis
-1. In your `MechaCarChallenge.RScript`, write an RScript using the `t.test()` function to determine if the PSI across all manufacturing lots is statistically different from the population mean of 1,500 pounds per square inch.
-2. Next, write three more RScripts in your `MechaCarChallenge.RScript` using the `t.test()` function and its `subset()` argument to determine if the PSI for each manufacturing lot is statistically different from the population mean of 1,500 pounds per square inch.
+![](images/t_test.png
 
-- An RScript is written for t-test that compares all manufacturing lots against mean PSI of the population
-- An RScript is written for three t-tests that compare each manufacturing lot against mean PSI of the population
-- There is a summary of the t-test results across all manufacturing lots and for each lot
 
-The next step is to conduct a t-test on the suspension coil data to determine whether there is a statistical difference between the mean of this provided sample dataset and a hypothesized, potential population dataset. Using the presumed **population mean of 1500**, we find the following:
 
-There is a summary of the t-test results across **all manufacturing lots**
-![d3](https://github.com/emmanuelmartinezs/MechaCar_Statistical_Analysis/blob/main/Resources/Images/t_test_all.png)
+![](images/t_test123.png)
 
-From here we can see the **true mean of the sample is 1498.78**, which we also saw in the summary statistics above.  With a **p-Value of 0.06**, which is higher than the common significance level of 0.05, there is **NOT enough evidence to support rejecting the null hypothesis**.  That is to say, the mean of all three of these manufacturing lots is statistically similar to the presumed population mean of 1500. 
+
+
+We can clearly see that  the mean of the sample is 1498.78 and a p-Value of 0.06 which is higher than the common significance level of 0.05, there is **NOT enough evidence to support rejecting the null hypothesis**.  That is to say, the mean of all three of these manufacturing lots is statistically similar to the presumed population mean of 1500. 
 
 **Next looking at each individual lots:**
 
